@@ -1,0 +1,188 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  opacity: 1;
+  animation: expandLoader 2s ease-in-out forwards;
+  z-index: 1000;
+}
+
+#loader.hidden {
+  display: none;
+}
+
+@keyframes expandLoader {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#content.visible {
+  opacity: 1;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('img/img_girl.gif');
+  background-size: cover;
+  color: white;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border: 4px solid transparent;
+  z-index: -1;
+  animation: animated-border 8s infinite linear;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+h1,
+h2,
+header {
+  text-align: center;
+  margin-top: 0px;
+}
+
+header {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container button,
+.button-container a button {
+  padding: 10px 30px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover,
+.button-container a button:hover {
+  background-color: #45a049;
+}
+
+@keyframes animated-border {
+
+  0%,
+  100% {
+    border-color: blue;
+  }
+
+  /* 25% {
+    border-color: red;
+  }
+
+  50% {
+    border-color: yellow;
+  } */
+
+  75% {
+    border-color: green;
+  }
+}
+
+
+
+/* Apply styles to the table */
+table.scrolldown {
+  width: 100%;
+  border-collapse: collapse; /* Ensure borders are collapsed */
+  border-spacing: 0;
+  border: 2px solid black;
+  border-radius: 10px; /* Add rounded corners */
+}
+
+/* Display tbody and thead as block-level elements */
+table.scrolldown tbody,
+table.scrolldown thead {
+  display: block;
+}
+
+/* Style for table header */
+thead tr th {
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 2px solid black; /* Add border at the bottom of header row */
+}
+
+/* Style for table body */
+table.scrolldown tbody {
+  height: 50px; /* Set height of table body */
+  overflow-y: auto; /* Enable vertical scroll */
+  overflow-x: hidden; /* Hide horizontal scroll */
+}
+
+/* Style for table cells */
+tbody td,
+thead th {
+  width: 200px;
+  border-right: 2px solid black; /* Add border between cells */
+  border-bottom: 2px solid black; /* Add border at the bottom of cells */
+}
+
+/* Additional styling */
+td {
+  text-align: center;
+}
+tbody {
+  border-top: 2px solid black; /* Add border at the top of tbody */
+}
