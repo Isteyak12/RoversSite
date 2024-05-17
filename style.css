@@ -142,47 +142,20 @@ header {
 
 
 
-/* Apply styles to the table */
-table.scrolldown {
-  width: 100%;
-  border-collapse: collapse; /* Ensure borders are collapsed */
-  border-spacing: 0;
-  border: 2px solid black;
-  border-radius: 10px; /* Add rounded corners */
+#animated-text {
+  font-size: 2em;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  animation: blink-caret 10s step-end infinite;
 }
 
-/* Display tbody and thead as block-level elements */
-table.scrolldown tbody,
-table.scrolldown thead {
-  display: block;
-}
-
-/* Style for table header */
-thead tr th {
-  height: 40px;
-  line-height: 40px;
-  border-bottom: 2px solid black; /* Add border at the bottom of header row */
-}
-
-/* Style for table body */
-table.scrolldown tbody {
-  height: 50px; /* Set height of table body */
-  overflow-y: auto; /* Enable vertical scroll */
-  overflow-x: hidden; /* Hide horizontal scroll */
-}
-
-/* Style for table cells */
-tbody td,
-thead th {
-  width: 200px;
-  border-right: 2px solid black; /* Add border between cells */
-  border-bottom: 2px solid black; /* Add border at the bottom of cells */
-}
-
-/* Additional styling */
-td {
-  text-align: center;
-}
-tbody {
-  border-top: 2px solid black; /* Add border at the top of tbody */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
