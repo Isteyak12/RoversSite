@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Text to animate
-  var text = "TEAM!";
+  var text = "CONTACT!";
 
   // Get the element
   var animatedText = document.getElementById("animated-text");
