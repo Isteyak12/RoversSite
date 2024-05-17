@@ -146,34 +146,15 @@ header {
   font-size: 2em;
   font-family: monospace;
   white-space: nowrap;
-  border-right: 0.15em solid black;
-  animation: blink-caret 10s step-end infinite;
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
-}
-
-#animated-text {
-  font-size: 2em;
-  font-family: monospace;
-  white-space: nowrap;
   color: black;
   position: absolute;
   left: -100%; /* Start position */
-  animation: slide-in 2s forwards, change-color 2s 2s forwards; /* Slide in for 2s, then change color after 2s */
+  animation: slide-in 4s forwards, change-color 4s 4s forwards; /* Slide in for 2s, then change color after 2s */
 }
 
 @keyframes slide-in {
   to {
-      left: 50%;
-      transform: translateX(-50%);
+      left: calc(55% - 175px); /* Adjust based on the width of the text */
   }
 }
 
@@ -193,12 +174,12 @@ header {
 
 .left {
   left: 0;
-  animation: slide-down 2s infinite alternate;
+  animation: slide-down 4s infinite alternate;
 }
 
 .right {
   right: 0;
-  animation: slide-up 2s infinite alternate;
+  animation: slide-up 4s infinite alternate;
 }
 
 @keyframes slide-down {
@@ -228,7 +209,7 @@ header {
   height: 80%;
   overflow: hidden;
   display: none;
-  transition: transform 0.5s ease;
+  transition: transform 8s ease;
 }
 
 .image-container img {
