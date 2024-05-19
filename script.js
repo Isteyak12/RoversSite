@@ -32,4 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Start animation
   animateTyping(text);
+
+  // Show content after loader (if you have a loader logic)
+  setTimeout(function () {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+  }, 2000); // Adjust delay to match your loader timing
 });

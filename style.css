@@ -29,7 +29,6 @@ html {
     height: 0;
     opacity: 1;
   }
-
   100% {
     width: 200px;
     height: 200px;
@@ -51,12 +50,12 @@ html {
   opacity: 1;
 }
 
-
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
-  background-image: url('img/img_girl.gif');
+  background-image: url('images/darkmars3.gif');
   background-size: cover;
   color: white;
 }
@@ -80,11 +79,21 @@ body::after {
   right: 0;
 }
 
+@keyframes animated-border {
+  0%,
+  100% {
+    border-color: blue;
+  }
+  75% {
+    border-color: green;
+  }
+}
+
 h1,
 h2,
 header {
   text-align: center;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 header {
@@ -99,6 +108,10 @@ header {
   padding: 10px;
   background-color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-container a {
+  margin: 0 10px;
 }
 
 .button-container button,
@@ -120,47 +133,25 @@ header {
   background-color: #45a049;
 }
 
-@keyframes animated-border {
-
-  0%,
-  100% {
-    border-color: blue;
-  }
-
-  /* 25% {
-    border-color: red;
-  }
-
-  50% {
-    border-color: yellow;
-  } */
-
-  75% {
-    border-color: green;
-  }
-}
-
-
-
 #animated-text {
   font-size: 2em;
   font-family: monospace;
   white-space: nowrap;
   color: black;
   position: absolute;
-  left: -100%; /* Start position */
-  animation: slide-in 4s forwards, change-color 4s 4s forwards; /* Slide in for 2s, then change color after 2s */
+  left: -100%;
+  animation: slide-in 4s forwards, change-color 4s 4s forwards;
 }
 
 @keyframes slide-in {
   to {
-      left: calc(55% - 175px); /* Adjust based on the width of the text */
+    left: calc(50% - 175px);
   }
 }
 
 @keyframes change-color {
   to {
-      color: white;
+    color: white;
   }
 }
 
@@ -184,19 +175,19 @@ header {
 
 @keyframes slide-down {
   from {
-      height: 0;
+    height: 0;
   }
   to {
-      height: 100%;
+    height: 100%;
   }
 }
 
 @keyframes slide-up {
   from {
-      height: 0;
+    height: 0;
   }
   to {
-      height: 100%;
+    height: 100%;
   }
 }
 
@@ -216,9 +207,42 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .image-container.show {
   display: block;
   transform: translate(-50%, -50%) scale(1);
+}
+
+#circ-box {
+  width: 300px;
+  height: 200px;
+  margin: 40px auto;
+  padding: 45px;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: 3px solid #ccc;
+  border-radius: 40px;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 70px; /* Adjust this value to move the box down */
+  color: black;
+}
+
+#circ-box p {
+  margin: 20px 0; /* Adjust this value to add space above and below the paragraph */
+}
+
+#circ-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+#circ-box::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 50px;
+}
+
+#circ-box::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
