@@ -1,3 +1,10 @@
+body {
+  background-color: black;
+  /* Set the background color of the body to black */
+  color: white;
+  /* Set the text color to white for better visibility */
+}
+
 #animated-text {
   font-size: 2em;
   font-family: monospace;
@@ -7,11 +14,78 @@
 }
 
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
+
   50% {
-    border-color: black;
+    border-color: orangered;
+  }
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  /* Add some space between the heading and image container */
+}
+
+
+.image-container img {
+  width: 200px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+
+.image-container>div {
+  display: flex;
+  /* Use flexbox to align image and text horizontally */
+  align-items: center;
+  /* Center items vertically */
+  margin-bottom: 20px;
+  /* Add space between image-text pairs */
+}
+
+.image-container img {
+  width: 200px;
+  /* Adjust image width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-right: 10px;
+  /* Add space between image and text */
+}
+
+.image-container p {
+  margin: 0;
+  /* Remove default margin for paragraphs */
+}
+
+
+
+.smoke {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('email.gif'); /* Make sure you have a smoke.png file */
+  background-size: cover;
+  opacity: 1;
+  animation: puff 2s forwards;
+}
+
+@keyframes puff {
+  0% {
+    transform: translate(0, 0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, -100px) scale(1.5);
+    opacity: 0;
   }
 }

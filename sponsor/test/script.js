@@ -1,32 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const image = document.getElementById('clickable-image');
-    const smokeContainer = document.getElementById('smoke-container');
-  
-    image.addEventListener('click', (event) => {
-      const rect = image.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-  
-      for (let i = 0; i < 3; i++) {
-        createSmoke(x, y);
-      }
-    });
-  
-    function createSmoke(x, y) {
-      const smoke = document.createElement('div');
-      smoke.className = 'smoke';
-      smoke.style.left = `${x}px`;
-      smoke.style.top = `${y}px`;
-  
-      // Generate random horizontal offset for the puff
-      const horizontalOffset = (Math.random() - 0.5) * 50; // Random value between -25 and 25
-      smoke.style.transform = `translate(${horizontalOffset}px, 0)`;
-  
-      smokeContainer.appendChild(smoke);
-  
-      smoke.addEventListener('animationend', () => {
-        smokeContainer.removeChild(smoke);
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  const clickableImage = document.getElementById("clickable-image");
+
+  clickableImage.addEventListener("click", function (event) {
+    for (let i = 0; i < 3; i++) {
+      createSmoke(event.clientX, event.clientY);
     }
   });
-  
+
+  function createSmoke(x, y) {
+    const smoke = document.createElement("div");
+    smoke.className = "smoke";
+    smoke.style.left = `${x + (Math.random() * 40 - 20)}px`;
+    smoke.style.top = `${y + (Math.random() * 40 - 20)}px`;
+    document.body.appendChild(smoke);
+
+    setTimeout(() => {
+      smoke.remove();
+    }, 2000); // Remove the smoke after the animation
+  }
+});
