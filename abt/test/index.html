@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="abtcss.css" />
+  </head>
+  <body>
+    <div class="background-container">
+      <img
+        src="images/galaxy-space.gif"
+        alt="Background"
+        class="background-gif"
+        id="background-image"
+      />
+    </div>
+
+    <div class="centered-window">
+      <h1>PURPOSE OUR TEAM</h1>
+      <p>
+        University of Windsor Mars Rover Team is excited to join the 2024
+        Canadian International Rover Challenge. Our main goal is to provide
+        students with hands-on learning in engineering and robotics, preparing
+        them for future careers in space exploration. We aim to encourage
+        collaboration, innovative problem-solving, and showcase our talents on
+        the international stage. Through this experience, we hope to inspire a
+        love for science and technology within our university community and
+        beyond.
+      </p>
+      <h1>OUR TEAM</h1>
+      <p>
+        The University of Windsor's Mars Rover Team comprises over 14 talented
+        engineering students, driven by an insatiable passion for space
+        exploration. Our diverse team is dedicated to overcoming the challenges
+        of exploring Mars, leveraging a rich blend of knowledge and hands-on
+        experiences from Co-Op opportunities.
+      </p>
+    </div>
+
+    <div class="button-container">
+        <!-- <a href="https://isteyak-digital-resume-app.streamlit.app/" class="button-link">
+            <button>ISTEYAK</button>
+        </a> -->
+        <button id="change-background">change theme!</button>
+    </div>
+
+    <div class="bottom-center">
+        <button id="back-button">⬅️GO BACK</button>
+    </div>
+
+    <div class="dark-mode">
+      <button onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <div class="top-left">
+      <a href="../home.html" class="home-link">🏠</a>
+    </div>
+
+    <script>
+      var backgrounds = [
+          "images/aurora-borealis-loop5.gif",
+          "images/galaxy-space.gif",
+        ],
+        body = document.body,
+        currentBackgroundIndex = 0,
+        imgElement = document.getElementById("background-image"),
+        changeBgButton = document.getElementById("change-background"),
+        backButton = document.getElementById("back-button");
+
+      changeBgButton.onclick = () => {
+        imgElement.src = backgrounds[currentBackgroundIndex];
+        currentBackgroundIndex =
+          (currentBackgroundIndex + 1) % backgrounds.length;
+      };
+
+      backButton.onclick = () => window.history.back();
+
+      function toggleDarkMode() {
+        body.classList.toggle("dark-mode-active");
+        if (body.classList.contains("dark-mode-active")) {
+          imgElement.src = "images/black-background.jpg"; // Change to black image
+        } else {
+          imgElement.src = backgrounds[currentBackgroundIndex]; // Change back to original background
+        }
+      }
+    </script>
+  </body>
+</html>
