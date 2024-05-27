@@ -134,7 +134,7 @@ header {
 }
 
 #animated-text {
-  font-size: 2em;
+  font-size: 4em;
   font-family: monospace;
   white-space: nowrap;
   color: black;
@@ -216,13 +216,13 @@ header {
 }
 
 #circ-box {
-  width: 300px;
+  width: 500px;
   height: 200px;
   margin: 40px auto;
   padding: 45px;
   background-color: rgba(255, 255, 255, 0.8); 
   border: 3px solid #ccc;
-  border-radius: 40px;
+  border-radius: 20px;
   overflow-y: scroll;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: relative;

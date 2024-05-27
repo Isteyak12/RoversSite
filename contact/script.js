@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Text to animate
-  var text = "CONTACT!";
-
   // Get the element
   var animatedText = document.getElementById("animated-text");
+
+  // Extract text from the element
+  var text = animatedText.textContent;
 
   // Function to set text content
   function setTextContent(text) {
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Start animation
   animateTyping(text);
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
