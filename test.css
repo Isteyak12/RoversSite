@@ -54,9 +54,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   margin: 0;
+  /* padding: 0; */
+  background-image: url('images/darkmars3.gif');  margin: 0;
   padding: 0;
-  background-image: url('images/darkmars3.gif');
-  background-size: cover;
   color: white;
 }
 
@@ -78,6 +78,57 @@ body::before {
 body::after {
   right: 0;
 }
+
+@keyframes animated-border {
+  0%,
+  100% {
+    border-color: blue;
+  }
+  75% {
+    border-color: green;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 16px;
+  }
+
+  body::before,
+  body::after {
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  body::before,
+  body::after {
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+
+  body::before,
+  body::after {
+    border-width: 1px;
+  }
+}
+
 
 @keyframes animated-border {
   0%,
@@ -191,6 +242,7 @@ header {
   }
 }
 
+
 #circ-box {
   width: 500px;
   height: 200px;
@@ -206,113 +258,21 @@ header {
   color: black;
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: #888 #fff; /* For Firefox */
-}
 
-#circ-box p {
-  margin: 20px 0;
-}
-
-#circ-box::-webkit-scrollbar {
-  width: 8px;
-}
-
-#circ-box::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 50px;
-}
-
-#circ-box::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Responsive design */
-@media (max-width: 1200px) {
-  body {
-    font-size: 18px;
+  p {
+    margin: 20px 0;
   }
 
-  #animated-text {
-    font-size: 3em;
+  &::-webkit-scrollbar {
+    width: 8px;
   }
 
-  .button-container button,
-  .button-container a button {
-    padding: 8px 20px;
-    font-size: 14px;
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
   }
 
-  #circ-box {
-    width: 400px;
-    height: 180px;
-    padding: 35px;
-  }
-}
-
-@media (max-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-
-  #animated-text {
-    font-size: 2.5em;
-  }
-
-  .button-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .button-container a {
-    margin: 5px 0;
-  }
-
-  #circ-box {
-    width: 350px;
-    height: 160px;
-    padding: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  #animated-text {
-    font-size: 2em;
-  }
-
-  .button-container button,
-  .button-container a button {
-    padding: 6px 15px;
-    font-size: 12px;
-  }
-
-  #circ-box {
-    width: 300px;
-    height: 140px;
-    padding: 25px;
-  }
-}
-
-@media (max-width: 576px) {
-  body {
-    font-size: 12px;
-  }
-
-  #animated-text {
-    font-size: 1.5em;
-  }
-
-  .button-container button,
-  .button-container a button {
-    padding: 4px 10px;
-    font-size: 10px;
-  }
-
-  #circ-box {
-    width: 250px;
-    height: 120px;
-    padding: 20px;
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }

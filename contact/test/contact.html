@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact us!</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div class="vertical-border left"></div>
-    <div class="vertical-border right"></div>
-    <h1 id="animated-text"></h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="loader"></div>
+  <div id="content" class="hidden">
+    <!-- Your existing content -->
+    <h1 id="animated-text">CONTACT</h1>
+    <div class="image-container">
+      <div>
+        <img src="insta.gif" alt="Instagram">
+        <h2><i>@uwr.team</i></h2>
+      </div>
+      <div>
+        <img src="email.gif" alt="Email">
+        <h2><i>uwr@uwindsor.ca</i></h2>
+      </div>
+      <div>
+        <img src="linkedin.gif" alt="LinkedIn">
+        <h2><i>https://linkedin.com/company/uwinrover</i></h2>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="24z.gif" alt="Clickable Image" id="clickable-image" />
+    </div>
+  </div>
+</body>
 </html>
