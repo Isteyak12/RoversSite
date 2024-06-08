@@ -5,6 +5,19 @@ html {
   overflow: hidden;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/darkmars3.gif');
+  background-size: cover; /* Ensure the background image covers the entire page */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Ensure the background image stays fixed in place */
+  color: white;
+}
+
 #loader {
   position: fixed;
   top: 50%;
@@ -48,16 +61,6 @@ html {
 
 #content.visible {
   opacity: 1;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  background-image: url('images/darkmars3.gif');
-  background-size: cover;
-  color: white;
 }
 
 body::before,
